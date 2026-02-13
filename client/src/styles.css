@@ -1,0 +1,219 @@
+:root {
+  font-family: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+  color: #1f2937;
+  background: radial-gradient(circle at top, #f5f7fb, #ebeff6 60%, #e6eaf1);
+  --card: #ffffff;
+  --border: #d9e1ec;
+  --accent: #1570ef;
+  --accent-soft: #e7f0ff;
+  --text-muted: #667085;
+  --success: #067647;
+  --error: #b42318;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.app-shell {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  padding: 20px;
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.hero p {
+  margin: 0 0 20px;
+  color: var(--text-muted);
+}
+
+.dropzone {
+  border: 2px dashed #c7d3e4;
+  border-radius: 16px;
+  padding: 44px 20px;
+  text-align: center;
+  cursor: pointer;
+  background: linear-gradient(180deg, #fbfcff, #f5f8ff);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.dropzone:hover,
+.dropzone:focus-visible {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.dropzone h2 {
+  margin: 0;
+}
+
+.dropzone p {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+}
+
+.hidden-input {
+  display: none;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+  align-items: center;
+}
+
+.controls label {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+select,
+button {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.primary-btn {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: white;
+}
+
+.secondary-btn {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: transparent;
+}
+
+.ghost-btn {
+  background: transparent;
+}
+
+.progress-wrap {
+  margin-top: 16px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.progress-track {
+  margin-top: 8px;
+  width: 100%;
+  border-radius: 99px;
+  background: #edf2fb;
+  height: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #1570ef, #47b0ff);
+  height: 100%;
+  transition: width 0.2s ease;
+}
+
+.error-banner,
+.error-text {
+  color: var(--error);
+}
+
+.queue-header,
+.queue-row {
+  display: grid;
+  grid-template-columns: 1.7fr 0.6fr 0.7fr 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.queue-header {
+  padding: 8px 10px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.queue-row {
+  padding: 10px;
+  border-top: 1px solid #eef2f8;
+}
+
+.filename {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status {
+  text-transform: capitalize;
+}
+
+.status.success {
+  color: var(--success);
+}
+
+.status.error {
+  color: var(--error);
+}
+
+.status.processing {
+  color: #b54708;
+}
+
+.status.queued {
+  color: #475467;
+}
+
+.tips ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 680px) {
+  .queue-header {
+    display: none;
+  }
+
+  .queue-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    border: 1px solid #eef2f8;
+    border-radius: 12px;
+    margin-bottom: 8px;
+  }
+}
