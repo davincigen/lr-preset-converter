@@ -13,6 +13,9 @@
     "build": "npm --workspace client run build && npm --workspace server run build",
     "start": "npm --workspace server run start"
   },
+  "dependencies": {
+    "busboy": "^1.6.0"
+  },
   "devDependencies": {
     "concurrently": "^9.1.2"
   }

@@ -29,6 +29,21 @@ npm run dev
 Frontend: `http://localhost:5173`
 API: `http://localhost:8787`
 
+## Deploy on Vercel (no card)
+
+1. Push this repo to GitHub.
+2. Import the repo in Vercel.
+3. Keep project root as repository root.
+4. Vercel will use `vercel.json`:
+   - Install: `npm install`
+   - Build: `npm run build`
+   - Output: `client/dist`
+5. Deploy.
+
+Serverless API routes used by the app:
+- `POST /api/convert`
+- `GET /api/health`
+
 ## API
 
 `POST /api/convert`
